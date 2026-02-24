@@ -1,0 +1,1 @@
+web: gunicorn gamedesk.wsgi

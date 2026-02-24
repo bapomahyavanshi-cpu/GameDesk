@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Payment</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+    <h2>Payment for {{ registration.tournament.name }}</h2>
+<p>Amount: ₹{{ registration.tournament.entry_fee }}</p>
+
+<a href="{% url 'payment_success' registration.id %}">
+    <button>Pay Now</button>
+</a>
+
+</head>
+<body>
+
+<div class="payment-box">
+    <h2>Dummy Payment Gateway</h2>
+
+    <p><strong>Tournament:</strong> {{ registration.tournament.title }}</p>
+    <p><strong>Entry Fee:</strong> ₹{{ registration.tournament.entry_fee }}</p>
+
+    <a href="{% url 'payment_success' registration.id %}" class="join-btn">
+        Pay Now
+    </a>
+</div>
+
+</body>
+</html>

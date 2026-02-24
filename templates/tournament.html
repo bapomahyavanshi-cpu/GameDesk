@@ -1,0 +1,67 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tournaments | Game Desk</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+
+<nav class="navbar">
+    <h2>GAME DESK</h2>
+    <ul>
+        <li><a href="{% url 'home' %}">Home</a></li>
+        <li><a href="{% url 'tournament' %}">Tournaments</a></li>
+        <li><a href="{% url 'about' %}">About</a></li>
+        <li><a href="{% url 'contact' %}">Contact</a></li>
+        <li><a href="{% url 'my_tournaments' %}">My Tournaments</a></li>
+        <li><a href="{% url 'match_schedule' %}">Match Schedule</a></li>
+    </ul>
+</nav>
+
+<!-- PAGE TITLE -->
+<section class="page-title">
+    <h1>Upcoming Tournaments</h1>
+    <p>Join battles. Win rewards. Compete with pros.</p>
+</section>
+
+<!-- TOURNAMENT CARDS -->
+<section class="tournaments-section">
+
+{% for t in tournaments %}
+<div class="tournament-card">
+
+    <img src="{{ t.image.url }}" alt="{{ t.title }}">
+    <h3>{{ t.title }}</h3>
+    <p> Prize Pool: ₹{{ t.prize_pool }}</p>
+
+{% if t.id in registered_tournaments %}
+    <button class="join-btn" disabled style="background: gray;">
+        Already Registered ✅
+    </button>
+{% else %}
+    <a href="{% url 'team_register' t.id %}" class="join-btn">
+        Register Team
+    </a>
+{% endif %}
+
+</div>
+{% endfor %}
+
+</section>
+
+<!-- ✅ NOTE AT BOTTOM CENTER -->
+<section class="note-section">
+    <p>
+        <strong>Note :</strong> Before registration, please carefully read all the tournament 
+        <a href="{% url 'rulebook2' %}" class="guideline-link">guidelines</a>.
+    </p>
+</section>
+
+<footer class="footer">
+    <p>© 2026 Game Desk | All Rights Reserved</p>
+</footer>
+
+</body>
+</html>

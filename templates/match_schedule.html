@@ -1,0 +1,57 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Match Schedule</title>
+
+    <!-- SAME CSS FILE JO TOURNAMENT USE KAR RAHA -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+
+<div class="container">
+    <h2 class="page-title">My Match Schedule</h2>
+
+    <div class="tournament-grid">
+
+        {% if schedules %}
+            {% for s in schedules %}
+
+                <div class="tournament-card">
+                    <img src="{{ s.tournament.image.url }}" alt="Tournament Image">
+
+                    <h3>{{ s.tournament.title }}</h3>
+
+                    <p>📅 {{ s.match_date|date:"M d, Y - h:i A" }}</p>
+
+                    <p>🏠 Room ID:
+                        {% if s.room_id %}
+                            {{ s.room_id }}
+                        {% else %}
+                            TBA
+                        {% endif %}
+                    </p>
+
+                    <p>🔑 Password:
+                        {% if s.room_password %}
+                            {{ s.room_password }}
+                        {% else %}
+                            TBA
+                        {% endif %}
+                    </p>
+
+                    <button class="joined-btn">Match Scheduled</button>
+                </div>
+
+            {% endfor %}
+        {% else %}
+            <p style="text-align:center;">No match scheduled yet.</p>
+        {% endif %}
+
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="profile-container">
+
+    <h1>{{ user.username }}'s Profile</h1>
+
+    <p><strong>Email:</strong> {{ user.email }}</p>
+    <p><strong>Phone:</strong> {{ profile.phone }}</p>
+    <p><strong>In-Game Name:</strong> {{ profile.in_game_name }}</p>
+    <p><strong>Joined:</strong> {{ user.date_joined }}</p>
+
+    <hr>
+
+    <h2>Registered Tournaments</h2>
+
+    {% for reg in registrations %}
+        <p>✔ {{ reg.tournament.title }} ({{ reg.status }})</p>
+    {% empty %}
+        <p>No tournaments registered yet.</p>
+    {% endfor %}
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,118 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BGMI Rulebook | Game Desk Esports</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- GLOBAL CSS -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+    <!-- PAGE CSS -->
+    <link rel="stylesheet" href="{% static 'assets/css/rulebook.css' %}">
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+    <h2 class="logo">GAME DESK</h2>
+    <ul>
+        <li><a href="{% url 'home' %}">Home</a></li>
+        <li><a href="{% url 'tournament' %}">Tournaments</a></li>
+        <li><a href="{% url 'about' %}">About</a></li>
+        <li><a href="{% url 'contact' %}">Contact</a></li>
+    </ul>
+</nav>
+
+<!-- RULEBOOK CONTENT -->
+<section class="rulebook-section">
+
+    <h1>BGMI</h1>
+    <h2>Official Competition Rulebook</h2>
+
+    <p class="rulebook-meta">
+        Version 1.0.0 <br>
+        December 15, 2025
+    </p>
+
+    <hr>
+
+    <h2>1. Introduction</h2>
+    <p>
+        This rulebook defines the official rules and regulations for BGMI tournaments
+        organized by <strong>Game Desk Esports</strong>. All participants must read and
+        agree to these rules before registering for any tournament.
+    </p>
+
+    <h2>2. Player Eligibility</h2>
+    <ul>
+        <li>Players must be at least <strong>16 years old</strong>.</li>
+        <li>Only <strong>Indian residents</strong> are allowed to participate.</li>
+        <li>BGMI account level must be <strong>50+</strong>.</li>
+        <li>Use of emulator or hacks is strictly prohibited.</li>
+    </ul>
+
+    <h2>3. Team Rules</h2>
+    <ul>
+        <li>Each team must have exactly <strong>4 main players</strong>.</li>
+        <li>One substitute player is allowed.</li>
+        <li>Team name must be unique and appropriate.</li>
+        <li>Roster changes after registration are not allowed.</li>
+    </ul>
+
+    <h2>4. Match Rules</h2>
+    <ul>
+        <li>Game Mode: <strong>Squad (TPP)</strong></li>
+        <li>Maps: Erangel / Miramar</li>
+        <li>Room ID & Password will be shared before match.</li>
+        <li>Late entry will result in point deduction.</li>
+    </ul>
+
+    <h2>5. Fair Play & Conduct</h2>
+    <ul>
+        <li>No cheating, teaming, or use of third-party tools.</li>
+        <li>No abusive language or toxic behavior.</li>
+        <li>All decisions by tournament admins are final.</li>
+        <li>Violation may lead to disqualification or ban.</li>
+    </ul>
+
+    <h2>6. Tournament Prizes</h2>
+    <ul>
+        <li><strong>Total Prize Pool:</strong> ₹10,00,000</li>
+        <li>1st Place – ₹5,00,000</li>
+        <li>2nd Place – ₹2,50,000</li>
+        <li>3rd Place – ₹1,50,000</li>
+        <li>MVP Player – ₹1,00,000</li>
+    </ul>
+
+    <h2>7. Disqualification</h2>
+    <ul>
+        <li>Use of hacks or exploits.</li>
+        <li>Sharing room credentials.</li>
+        <li>Fake information during registration.</li>
+    </ul>
+
+    <h2>8. Organizer Rights</h2>
+    <p>
+        Game Desk Esports reserves the right to modify rules, cancel matches,
+        or take disciplinary action if required.
+    </p>
+
+    <hr>
+
+    <p class="rulebook-footer">
+        This rulebook is created for academic and demonstration purposes
+        as part of the Game Desk Esports project.
+    </p>
+
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <p>© 2026 Game Desk | All Rights Reserved</p>
+</footer>
+
+</body>
+</html>

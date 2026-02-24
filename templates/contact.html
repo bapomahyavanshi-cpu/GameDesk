@@ -1,0 +1,82 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Game Desk</title>
+
+    <!-- GLOBAL CSS -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+
+<!-- MOBILE MENU TOGGLE -->
+<div class="menu-toggle" onclick="toggleMenu()">
+  <span></span>
+  <span></span>
+  <span></span>
+</div>
+
+<!-- SIDE MENU -->
+<div class="side-menu" id="sideMenu">
+  <a href="{% url 'signup' %}">Sign Up</a>
+  <a href="{% url 'login' %}">Login</a>
+  <a href="{% url 'tournament' %}">Prizes</a>
+</div>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+    <h2>GAME DESK</h2>
+    <ul>
+        <li><a href="{% url 'home' %}">Home</a></li>
+        <li><a href="{% url 'tournament' %}">Tournaments</a></li>
+        <li><a href="{% url 'about' %}">About</a></li>
+        <li><a href="{% url 'contact' %}" class="active">Contact</a></li>
+    </ul>
+</nav>
+
+<!-- CONTACT FORM -->
+<section class="contact-section">
+
+    <h1>Contact Us</h1>
+    <p class="contact-text">Have questions? Send us a message!</p>
+
+    <form class="contact-form" method="post">
+        {% csrf_token %}
+
+    <label>Your Name</label>
+    <input type="text" name="name" placeholder="Enter your name" required>
+
+    <label>Your Email</label>
+    <input type="email" name="email" placeholder="Enter your email" required>
+
+    <label>Your Message</label>
+    <textarea name="message" placeholder="Write your message..." required></textarea>
+
+    <button type="submit" class="send-btn">Send Message</button>
+</form>
+</section>
+
+
+{% if messages %}
+  {% for message in messages %}
+    <div style="color:#00f2ff; text-align:center; margin-bottom:15px;">
+        {{ message }}
+    </div>
+  {% endfor %}
+{% endif %}
+<!-- FOOTER -->
+<footer class="footer">
+   <p>© 2026 Game Desk | All Rights Reserved</p>
+</footer>
+
+<script>
+function toggleMenu() {
+  document.getElementById("sideMenu").classList.toggle("active");
+}
+</script>
+
+</body>
+</html>

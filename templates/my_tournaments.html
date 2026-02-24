@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Tournaments | Game Desk</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+
+<h2 style="text-align:center; color:#00ffff; margin-top:40px;">
+    My Joined Tournaments
+</h2>
+
+<section class="tournaments-section">
+
+{% if joins %}
+    {% for join in joins %}
+    <div class="tournament-card">
+        <img src="{{ join.tournament.image.url }}" alt="{{ join.tournament.title }}">
+        <h3>{{ join.tournament.title }}</h3>
+        <p>
+            Entry Fee: ₹{{ join.tournament.entry_fee }} |
+            Prize Pool: ₹{{ join.tournament.prize_pool }}
+        </p>
+        <button class="join-btn joined">Joined</button>
+    </div>
+    {% endfor %}
+{% else %}
+    <p style="text-align:center; color:white;">
+        You have not joined any tournament yet.
+    </p>
+{% endif %}
+
+</section>
+
+</body>
+</html>
+
+{% endblock %}
