@@ -21,8 +21,9 @@ urlpatterns = [
     path('rulebook/', views.rulebook, name='rulebook'),
     path('match-schedule/', views.match_schedule, name='match_schedule'),
 
-    path('team_register/<int:tournament_id>/', views.team, name='team_register'),
+    path('team_register/<int:tournament_id>/', views.team_register, name='team_register'),
 
+    
     path('dashboard/', views.dashboard, name='dashboard'),
     path('profile/', views.profile, name='profile'),
 
@@ -34,6 +35,9 @@ urlpatterns = [
     path('all_team_entries/', views.all_team_entries, name='all_team_entries'),
     
     path('contact/', views.contact, name='contact'),
+
+    path('match-results/', views.match_results, name='match_results'),
+
 
 ]
 

@@ -117,47 +117,40 @@ def match_schedule(request):
 
 # ================= TEAM REGISTRATION =================
 @login_required
-def team(request, tournament_id):
+def team_register(request, tournament_id):
+
     tournament = get_object_or_404(Tournament, id=tournament_id)
-
-    if TeamRegistration.objects.filter(user=request.user, tournament=tournament).exists():
-        messages.error(request, "You already registered a team.")
-        return redirect('tournament')
-
-
 
     if request.method == "POST":
 
-        team_logo = request.FILES.get('team_logo')
+        team_name = request.POST.get("team_name")
 
+        # Create team registration
         team = TeamRegistration.objects.create(
             user=request.user,
             tournament=tournament,
-            team_name=request.POST['team_name'],
-            contact_email=request.POST['email'],
-            contact_phone=request.POST['phone'],
-            team_logo=team_logo,
-            payment_status="Pending"
+            team_name=team_name
         )
 
-        # Create 4 main players
-    for i in range(1, 6):
-           name = request.POST.get(f'player{i}_name')
-           ign = request.POST.get(f'player{i}_ign')
-           pid = request.POST.get(f'player{i}_id')
+        # Loop for players
+        for i in range(1, 5):
+            name = request.POST.get(f"player{i}_name")
+            ign = request.POST.get(f"player{i}_ign")
+            pid = request.POST.get(f"player{i}_id")
 
-    if name and ign and pid:
-           TeamPlayer.objects.create(
-            team=team,
-            player_name=name,
-            in_game_name=ign,
-            player_id=pid
-        )
+            if name and ign and pid:
+                TeamPlayer.objects.create(
+                    team=team,
+                    player_name=name,
+                    in_game_name=ign,
+                    player_id=pid
+                )
 
-    return redirect('payment', registration_id=team.id)
+        return redirect('payment', registration_id=team.id)
 
-
-    return render(request, 'team_register.html', {'tournament': tournament})
+    return render(request, 'team_register.html', {
+        'tournament': tournament
+    })
 
 # ================= DASHBOARD =================
 
@@ -239,3 +232,6 @@ def contact(request):
         return redirect("contact")
 
     return render(request, "contact.html")
+
+def match_results(request):
+    return render(request, 'match_results.html')
