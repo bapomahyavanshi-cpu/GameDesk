@@ -10,6 +10,10 @@ DEBUG = True
 ALLOWED_HOSTS = ['*']
 
 
+CSRF_TRUSTED_ORIGINS = [
+    "https://gamedesk.onrender.com"
+]
+
 # Applications
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -106,9 +110,6 @@ STATICFILES_DIRS = [
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-
-
 
 # Media files
 MEDIA_URL = '/media/'
@@ -117,7 +118,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # Auth redirects
 LOGIN_URL = 'login'
-LOGIN_REDIRECT_URL = 'home'
+LOGIN_REDIRECT_URL = 'tournament'
 LOGOUT_REDIRECT_URL = 'home'
 
 
