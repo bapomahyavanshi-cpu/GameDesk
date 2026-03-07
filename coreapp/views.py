@@ -47,18 +47,21 @@ def signup(request):
 
     return render(request, 'signup.html')
 
-
 def login_view(request):
     if request.method == "POST":
         email = request.POST.get("email")
         password = request.POST.get("password")
 
         user = authenticate(request, username=email, password=password)
+
         if user:
             login(request, user)
             return redirect("tournament")
+        else:
+            messages.error(request, "Invalid login credentials")
 
     return render(request, 'login.html')
+
 
 # ================= TOURNAMENT =================
 
@@ -195,7 +198,9 @@ def payment_success(request, registration_id):
     registration.payment_status = "Paid"
     registration.save()
 
-    return redirect('dashboard')
+    messages.success(request, "Tournament registration successful!")
+
+    return redirect('tournament')
 
 def rulebook2(request):
     return render(request, 'rulebook2.html')
@@ -226,7 +231,7 @@ def contact(request):
 
         messages.success(
             request,
-            "Thanks for your message. The Game Desk org will kindly answer your message."
+            "Thanks for your message. The Game Desk org will  Answer your message."
         )
 
         return redirect("contact")
