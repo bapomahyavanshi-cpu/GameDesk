@@ -246,3 +246,8 @@ def contact(request):
 
 def match_results(request):
     return render(request, 'match_results.html')
+
+
+# ================= SETTING =================
+def settings_page(request):
+    return render(request, "settings.html")    

@@ -903,3 +903,36 @@ ul li {
 .navbar ul li a:hover {
     color: #ff0000;
 }
+
+
+/* setting*/
+.settings-container{
+max-width:700px;
+margin:60px auto;
+color:white;
+}
+
+.setting-card{
+background:#111827;
+padding:20px;
+margin-top:20px;
+border-radius:12px;
+box-shadow:0 0 10px cyan;
+}
+
+.light-mode{
+background:white;
+color:black;
+}
+
+textarea{
+width:100%;
+height:80px;
+}
+
+button{
+background:cyan;
+border:none;
+padding:8px 20px;
+border-radius:6px;
+}

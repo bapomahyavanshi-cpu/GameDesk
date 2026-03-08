@@ -1,0 +1,40 @@
+{% load static %}
+
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="UTF-8">
+<title>Settings | Game Desk</title>
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+<div class="settings-container">
+    <h2>⚙ Settings</h2><!-- Appearance --><div class="setting-card">
+    <h3>Appearance</h3><label class="switch">
+<input type="checkbox" onclick="toggleMode()">
+<span class="slider"></span>
+</label><span>Dark / Light Mode</span>
+
+</div><!-- Language --><div class="setting-card"><h3>Language</h3><select>
+<option>English</option>
+<option>Hindi</option>
+</select></div><!-- Notifications --><div class="setting-card"><h3>Notifications</h3><label>
+<input type="checkbox"> Tournament Alerts
+</label><br><label>
+<input type="checkbox"> Match Reminders
+</label></div><!-- Account --><div class="setting-card"><h3>Account</h3><a href="{% url 'profile' %}">Edit Profile</a>
+
+<br><br>
+
+<a href="{% url 'logout' %}">Logout</a>
+
+</div><!-- Feedback --><div class="setting-card"><h3>Feedback</h3><textarea placeholder="Write your feedback..."></textarea><br><br>
+
+<button>Submit</button>
+
+</div></div><script>
+
+function toggleMode(){
+document.body.classList.toggle("light-mode");
+}
+
+</script></body>
+</html>
