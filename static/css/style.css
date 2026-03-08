@@ -790,74 +790,116 @@ body {
     box-shadow: 0 0 12px #00f2ff;
 }
 
-body{
-background:#0b0f19;
-color:white;
-font-family:Arial, Helvetica, sans-serif;
+/* rulebook.css */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap');
+
+body {
+    background-color: #0f0f0f; /* Dark background */
+    color: #ffffff;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
-/* MAIN RULEBOOK BOX */
-
-.rulebook-section{
-max-width:900px;
-margin:60px auto;
-padding:40px;
-
-background:#111827;
-
-border-radius:20px;
-
-box-shadow:0 0 25px cyan;
-
+.rulebook-section {
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 20px;
+    background: rgba(20, 20, 20, 0.8);
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.2);
 }
 
-/* TITLE */
-
-.rulebook-section h1{
-color:#00ffff;
-font-size:36px;
-margin-bottom:5px;
+h1, h2 {
+    text-align: center;
+    text-transform: uppercase;
+    color: #ff0000; /* Gaming Red */
+    letter-spacing: 2px;
 }
 
-.rulebook-section h2{
-color:#00ffff;
-margin-top:30px;
+.rulebox {
+    background: #1a1a1a;
+    border-left: 5px solid #ff0000;
+    margin-bottom: 25px;
+    padding: 20px;
+    border-radius: 0 10px 10px 0;
+    transition: 0.3s;
 }
 
-/* TABLE */
-
-.rulebook-section table{
-width:100%;
-border-collapse:collapse;
-margin-top:15px;
+.rulebox:hover {
+    transform: scale(1.02);
+    box-shadow: 0 5px 15px rgba(255, 0, 0, 0.3);
 }
 
-.rulebook-section th{
-background:#ff6b6b;
-padding:12px;
-text-align:center;
+.rulebox h3 {
+    color: #ff0000;
+    margin-top: 0;
+    border-bottom: 1px solid #333;
+    padding-bottom: 10px;
+    font-size: 1.4rem;
 }
 
-.rulebook-section td{
-padding:12px;
-border:1px solid cyan;
-text-align:center;
+/* Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
 }
 
-.rulebook-section tr:hover{
-background:#1f2937;
+th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #333;
 }
 
-/* LIST */
-
-.rulebook-section ul{
-margin-left:20px;
-line-height:28px;
+th {
+    color: #888;
+    font-size: 0.9rem;
+    text-transform: uppercase;
 }
 
-/* FOOTER TEXT */
+td {
+    font-weight: 600;
+    color: #eee;
+}
 
-.rulebook-footer{
-margin-top:40px;
-opacity:0.7;
+/* List Styling */
+ul {
+    padding-left: 20px;
+}
+
+ul li {
+    margin-bottom: 10px;
+    color: #ccc;
+}
+
+/* Footer & Nav adjustment if needed */
+.navbar {
+    background: #000;
+    padding: 15px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #ff0000;
+}
+
+.logo {
+    color: #ff0000;
+    font-weight: 800;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+}
+
+.navbar ul li a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: 500;
+}
+
+.navbar ul li a:hover {
+    color: #ff0000;
 }
