@@ -38,6 +38,8 @@ urlpatterns = [
 
     path('match-results/', views.match_results, name='match_results'),
 
+    path('logout/', views.logout_view, name='logout'),
+
 
 ]
 
