@@ -39,9 +39,6 @@ urlpatterns = [
 
     path('logout/', views.logout_view, name='logout'),
 
-    path("settings/", views.settings_page, name="settings"),
-
-
 ]
 
 if settings.DEBUG:
