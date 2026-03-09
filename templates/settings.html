@@ -1,39 +1,30 @@
 {% load static %}
 
-<!DOCTYPE html><html lang="en"><head>
+<!DOCTYPE html><html lang="en">
+<head>
 <meta charset="UTF-8">
 <title>Settings | Game Desk</title>
 <link rel="stylesheet" href="{% static 'css/style.css' %}">
-</head>
-<body>
-<div class="settings-container">
-    <h2>⚙ Settings</h2><!-- Appearance --><div class="setting-card">
-    <h3>Appearance</h3><label class="switch">
-<input type="checkbox" onclick="toggleMode()">
-<span class="slider"></span>
-</label><span>Dark / Light Mode</span>
+</head><body><div class="settings-container"><h2>⚙ Appearance</h2><div class="setting-card"><label>
+<input type="radio" name="theme" value="dark" onclick="setTheme('dark')">
+Dark Mode
+</label><br><br>
 
-</div><!-- Language --><div class="setting-card"><h3>Language</h3><select>
-<option>English</option>
-<option>Hindi</option>
-</select></div><!-- Notifications --><div class="setting-card"><h3>Notifications</h3><label>
-<input type="checkbox"> Tournament Alerts
-</label><br><label>
-<input type="checkbox"> Match Reminders
-</label></div><!-- Account --><div class="setting-card"><h3>Account</h3><a href="{% url 'profile' %}">Edit Profile</a>
+<label>
+<input type="radio" name="theme" value="light" onclick="setTheme('light')">
+Light Mode
+</label></div></div><script>
 
-<br><br>
+function setTheme(mode){
 
-<a href="{% url 'logout' %}">Logout</a>
+localStorage.setItem("theme", mode);
 
-</div><!-- Feedback --><div class="setting-card"><h3>Feedback</h3><textarea placeholder="Write your feedback..."></textarea><br><br>
+if(mode === "light"){
+document.body.classList.add("light-mode");
+}else{
+document.body.classList.remove("light-mode");
+}
 
-<button>Submit</button>
-
-</div></div><script>
-
-function toggleMode(){
-document.body.classList.toggle("light-mode");
 }
 
 </script></body>

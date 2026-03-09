@@ -936,3 +936,40 @@ border:none;
 padding:8px 20px;
 border-radius:6px;
 }
+
+/* DARK THEME (DEFAULT) */
+
+body{
+background:#0b0f19;
+color:white;
+}
+
+
+/* LIGHT THEME */
+
+.light-mode{
+background:white;
+color:black;
+}
+
+/* Navbar */
+
+.light-mode .navbar{
+background:#f5f5f5;
+}
+
+/* Cards */
+
+.light-mode .card,
+.light-mode .setting-card{
+background:#ffffff;
+color:black;
+box-shadow:0 0 10px gray;
+}
+
+/* Buttons */
+
+.light-mode button{
+background:#007bff;
+color:white;
+}
