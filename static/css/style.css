@@ -36,6 +36,10 @@ body {
   text-shadow: 0 0 10px #00f2ff;
 }
 
+.navbar a:first-child{
+margin-left:25px;
+}
+
 /* ===== HERO ===== */
 .hero {
   height: 80vh;
