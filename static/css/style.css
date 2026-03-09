@@ -14,27 +14,43 @@ body {
 }
 
 /* ===== NAVBAR ===== */
+.navbar{
+  background:#0b0b0b;
+  border-bottom:2px solid #00f2ff;
+  padding:18px 40px;
 
-.navbar {
-  background: #0b0b0b;
-  border-bottom: 2px solid #00f2ff;
-  padding: 15px 30px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
 }
 
-.navbar a {
-  color: #00f2ff;
-  text-decoration: none;
-  margin-left: 20px;
-  font-weight: bold;
+/* logo */
+.navbar-brand{
+  color:#00f2ff !important;
+  font-size:22px;
+  font-weight:bold;
+  letter-spacing:2px;
 }
 
-.navbar a:hover {
-  color: white;
-  text-shadow: 0 0 10px #00f2ff;
+/* menu links container */
+.navbar-nav{
+  display:flex;
+  align-items:center;
+  gap:25px;
 }
+
+/* menu links */
+.navbar-nav .nav-link{
+  color:#00f2ff !important;
+  font-weight:bold;
+  transition:0.3s;
+}
+
+.navbar-nav .nav-link:hover{
+  color:white !important;
+  text-shadow:0 0 10px #00f2ff;
+}
+
 
 /* ===== HERO ===== */
 .hero {
