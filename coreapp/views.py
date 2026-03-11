@@ -247,3 +247,25 @@ def contact(request):
 def match_results(request):
     return render(request, 'match_results.html')
 
+from django.contrib.auth.models import User
+from django.shortcuts import render, redirect
+
+def forgot_password(request):
+
+    if request.method == "POST":
+        username = request.POST.get("username")
+        new_password = request.POST.get("new_password")
+        confirm_password = request.POST.get("confirm_password")
+
+        if new_password == confirm_password:
+
+            try:
+                user = User.objects.get(username=username)
+                user.set_password(new_password)
+                user.save()
+                return redirect("login")
+
+            except User.DoesNotExist:
+                return render(request,"forgot_password.html",{"error":"User not found"})
+
+    return render(request,"forgot_password.html")
