@@ -39,7 +39,7 @@ urlpatterns = [
 
     path('logout/', views.logout_view, name='logout'),
 
-    path('forgot-password/', views.forgot_password, name='forgot_password'),
+    path('forgot_password/', views.forgot_password, name='forgot_password'),
 ]
 
 
