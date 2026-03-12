@@ -68,7 +68,7 @@ text-align:center;
 
 background:
 linear-gradient(rgba(0,0,0,0.65),rgba(0,0,0,0.85)),
-url("/static/css/bgmi_pic.jpg");
+url("bgmi_pic.jpg");
 
 background-size:cover;
 background-position:center;
