@@ -898,3 +898,51 @@ justify-content:center;
 align-items:center;
 height:100vh;
 }
+
+/* Schedule Page Layout Fix */
+.tournament-grid {
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+/* Card design ko tournament page jaisa same rakhne ke liye */
+.tournament-grid .tournament-card {
+    width: 320px; /* Isse 1 line me 3 card aayenge desktop par */
+    background: #000;
+    border: 2px solid #00f2ff;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 242, 255, 0.5);
+    overflow: hidden;
+    transition: 0.3s;
+    padding-bottom: 20px; /* Button ke niche thodi jagah */
+}
+
+/* Match Schedule ke andar ke text ki styling */
+.tournament-grid .tournament-card p {
+    color: #ccc;
+    text-align: center;
+    margin: 8px 0;
+    font-size: 0.95rem;
+}
+
+/* Button style fix */
+.joined-btn {
+    display: block;
+    margin: 15px auto;
+    padding: 10px 25px;
+    background: #00f2ff;
+    color: black;
+    font-weight: bold;
+    border-radius: 25px;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 0 20px rgba(0, 242, 255, 0.8);
+}
+
+.joined-btn:hover {
+    background: white;
+    box-shadow: 0 0 25px white;
+}
