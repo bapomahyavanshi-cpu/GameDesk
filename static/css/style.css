@@ -868,3 +868,11 @@ td {
     font-weight: 600;
     color: #eee;
 }
+
+/* forgot password */
+.reset-wrapper{
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+}
