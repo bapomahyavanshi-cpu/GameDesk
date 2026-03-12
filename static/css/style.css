@@ -67,7 +67,7 @@ align-items:center;
 text-align:center;
 
 background:
-linear-gradient(rgba(0,0,0,0.65),rgba(0,0,0,0.85)),
+linear-gradient(#00f2ff(0, 50, 101, 0.65),#00f2ff(0,0,0,0.85)),
 url("/static/images/bgmi.pic.jpg");
 
 background-size:cover;
