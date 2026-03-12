@@ -88,6 +88,14 @@ background-repeat:no-repeat;
   background: white;
 }
 
+.hero{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding-top:200px;
+}
 
 /* ===== FEATURES ===== */
 section {
