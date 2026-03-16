@@ -16,7 +16,7 @@ body {
 /* ===== NAVBAR - Padding Adjust Kiya Hai ===== */
 .navbar {
   background: #0b0b0b;
-  border-bottom: 2px solid #00f2ff;
+  border-bottom: 2px solid #0c0612;
   padding: 15px 30px 15px 80px; /* LEFT PADDING 80px taki hamburger ke liye jagah rahe */
   display: flex;
   justify-content: space-between;
