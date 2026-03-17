@@ -1,303 +1,3 @@
-/* ===== NEON SYSTEM VARIABLES ===== */
-:root {
-  --neon-cyan: #00f2ff;
-  --neon-purple: #bd00ff;
-  --dark-bg: #05161a;
-  --pure-black: #000;
-  --card-bg: #0b0b0b;
-  --text-dim: #ccc;
-  --cyan-glow: 0 0 15px rgba(0, 242, 255, 0.6);
-  --purple-glow: 0 0 20px rgba(189, 0, 255, 0.5);
-}
-
-/* ===== GLOBAL ===== */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Poppins', Arial, sans-serif;
-}
-
-body {
-  background: radial-gradient(circle at top, var(--dark-bg), var(--pure-black));
-  color: white;
-  min-height: 100vh;
-  overflow-x: hidden;
-}
-
-/* ===== NAVBAR ===== */
-.navbar {
-  background: rgba(11, 11, 11, 0.9);
-  border-bottom: 2px solid var(--neon-purple); /* Purple Touch */
-  padding: 15px 30px 15px 80px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: sticky;
-  top: 0;
-  z-index: 999;
-  backdrop-filter: blur(10px);
-}
-
-.navbar a {
-  color: var(--neon-cyan);
-  text-decoration: none;
-  margin-left: 20px;
-  font-weight: bold;
-  transition: 0.3s;
-}
-
-.navbar a:hover {
-  color: white;
-  text-shadow: 0 0 10px var(--neon-cyan), 0 0 20px var(--neon-purple);
-}
-
-/* ===== HERO SECTION ===== */
-.hero {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.85)),
-              url("/static/images/bgmi_pic.jpg");
-  background-size: cover;
-  background-position: center 50%;
-  padding-top: 350px;
-}
-
-.hero h1 {
-  font-size: 3.5rem;
-  color: var(--neon-cyan);
-  text-shadow: 0 0 10px var(--neon-cyan), 0 0 30px var(--neon-purple); /* Dual Neon Pop */
-}
-
-.hero p {
-  margin-top: 10px;
-  font-size: 1.2rem;
-  color: #ddd;
-}
-
-.btn-gaming {
-  margin-top: 20px;
-  padding: 12px 35px;
-  background: linear-gradient(45deg, var(--neon-cyan), var(--neon-purple));
-  color: white;
-  border-radius: 30px;
-  font-weight: bold;
-  text-decoration: none;
-  box-shadow: 0 0 20px var(--neon-cyan);
-  transition: 0.4s ease;
-  border: none;
-}
-
-.btn-gaming:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 30px var(--neon-purple);
-  filter: brightness(1.2);
-}
-
-/* ===== FEATURES ===== */
-section {
-  padding: 60px 20px;
-}
-
-.feature-box {
-  border: 2px solid var(--neon-cyan);
-  padding: 25px;
-  border-radius: 15px;
-  text-align: center;
-  box-shadow: var(--cyan-glow);
-  background: rgba(0, 0, 0, 0.4);
-  transition: 0.3s;
-}
-
-.feature-box:hover {
-  border-color: var(--neon-purple);
-  box-shadow: var(--purple-glow);
-}
-
-/* ===== TOURNAMENTS ===== */
-.page-title h1 {
-  color: var(--neon-cyan);
-  font-size: 3rem;
-  text-shadow: 0 0 10px var(--neon-cyan), 0 0 25px var(--neon-purple);
-}
-
-.tournaments-section {
-  display: flex;
-  gap: 40px;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.tournament-card {
-  width: 320px;
-  background: var(--pure-black);
-  border: 2px solid var(--neon-cyan);
-  border-radius: 15px;
-  box-shadow: 0 0 20px rgba(0, 242, 255, 0.4);
-  overflow: hidden;
-  transition: 0.4s ease;
-}
-
-.tournament-card:hover {
-  transform: translateY(-8px);
-  border-color: var(--neon-purple);
-  box-shadow: 0 0 35px var(--neon-purple);
-}
-
-.tournament-card h3 {
-  color: var(--neon-cyan);
-  text-align: center;
-  margin-top: 15px;
-}
-
-.join-btn {
-  display: block;
-  margin: 15px auto;
-  padding: 10px 25px;
-  background: var(--neon-cyan);
-  color: black;
-  font-weight: bold;
-  border-radius: 25px;
-  border: none;
-  cursor: pointer;
-  box-shadow: 0 0 15px var(--neon-cyan);
-}
-
-.join-btn:hover {
-  background: var(--neon-purple);
-  color: white;
-  box-shadow: 0 0 25px var(--neon-purple);
-}
-
-/* ===== AUTH PAGES & CARDS ===== */
-.auth-page, .auth-wrapper {
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.auth-card, .auth-container {
-  width: 420px;
-  padding: 40px;
-  background: var(--card-bg);
-  border-radius: 18px;
-  border: 2px solid var(--neon-purple); /* Purple accent for forms */
-  box-shadow: 0 0 35px rgba(189, 0, 255, 0.5);
-  text-align: center;
-}
-.auth-card h2, .auth-container h2 {
-  color: var(--neon-cyan);
-  text-shadow: 0 0 10px var(--neon-cyan);
-  margin-bottom: 25px;
-}
-
-.auth-card input, .auth-container input {
-  width: 100%;
-  padding: 14px;
-  margin-bottom: 16px;
-  background: #111;
-  border: 1px solid var(--neon-cyan);
-  color: white;
-  border-radius: 10px;
-  outline: none;
-}
-
-.auth-card input:focus {
-  border-color: var(--neon-purple);
-  box-shadow: 0 0 12px var(--neon-purple);
-}
-
-.auth-card button, .auth-container button {
-  width: 100%;
-  padding: 14px;
-  background: var(--neon-cyan);
-  border: none;
-  color: black;
-  font-weight: bold;
-  border-radius: 30px;
-  box-shadow: 0 0 20px var(--neon-cyan);
-  cursor: pointer;
-}
-
-.auth-card button:hover {
-  background: white;
-  box-shadow: 0 0 25px white;
-}
-
-/* ===== TABLES (Entries & Rules) ===== */
-.rule-table, .entries-table, .results-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 20px;
-  border: 1px solid var(--neon-cyan);
-}
-
-.rule-table th, .entries-table th, .results-table th {
-  background: var(--neon-cyan);
-  color: black;
-  padding: 15px;
-}
-
-.rule-table td, .entries-table td, .results-table td {
-  border: 1px solid #222;
-  padding: 12px;
-  color: white;
-}
-
-.entries-table tr:hover {
-  background: rgba(189, 0, 255, 0.1); /* Purple hover effect */
-}
-
-/* ===== SIDE MENU ===== */
-.menu-toggle span {
-  background: var(--neon-cyan);
-}
-
-.side-menu {
-  position: fixed;
-  top: 0;
-  left: -220px;
-  width: 220px;
-  height: 100%;
-  background: #0a0a0a;
-  border-right: 2px solid var(--neon-purple);
-  padding-top: 80px;
-  transition: 0.3s ease;
-  z-index: 1000;
-}
-
-.side-menu.active {
-  left: 0;
-}
-
-.side-menu a:hover {
-  background: var(--neon-purple);
-  color: white;
-}
-
-/* ===== FOOTER ===== */
-.footer {
-  border-top: 2px solid var(--neon-cyan);
-  padding: 30px;
-  text-align: center;
-  background: #050505;
-}
-
-/* ===== FLOATING ELEMENTS ===== */
-.rulebook-link, .social-icons a {
-  color: var(--neon-cyan);
-  text-shadow: 0 0 5px var(--neon-cyan);
-}
-
-.guideline-link:hover {
-    color: var(--neon-purple);
-    text-shadow: 0 0 10px var(--neon-purple);
-}
 /* ===== GLOBAL ===== */
 * {
   margin: 0;
@@ -316,7 +16,7 @@ body {
 /* ===== NAVBAR - Padding Adjust Kiya Hai ===== */
 .navbar {
   background: #0b0b0b;
-  border-bottom: 2px solid #bd00ff; /* Purple Touch added */
+  border-bottom: 2px solid #bd00ff;
   padding: 15px 30px 15px 80px; /* LEFT PADDING 80px taki hamburger ke liye jagah rahe */
   display: flex;
   justify-content: space-between;
@@ -349,8 +49,8 @@ body {
 .hero h1 {
   font-size: 3.5rem;
   color: #00f2ff;
-  /* Cyan and Purple Dual Glow */
-  text-shadow: 0 0 10px #00f2ff, 0 0 20px #bd00ff, 0 0 40px rgba(189, 0, 255, 0.6);
+  /* Glow intensity badha di hai image ke hisaab se */
+  text-shadow: 0 0 10px #00f2ff, 0 0 25px #bd00ff, 0 0 40px rgba(189, 0, 255, 0.6);
 }
 
 .hero p {
@@ -376,19 +76,18 @@ background-repeat:no-repeat;
 .btn-gaming {
   margin-top: 20px;
   padding: 12px 35px;
-  background: linear-gradient(45deg, #00f2ff, #bd00ff); /* Neon Gradient */
+  background: linear-gradient(45deg, #00f2ff, #bd00ff);
   color: white;
   border-radius: 30px;
   font-weight: bold;
   text-decoration: none;
   box-shadow: 0 0 20px #00f2ff, 0 0 10px #bd00ff;
-  border: none;
 }
 
 .btn-gaming:hover {
   background: white;
   color: black;
-  box-shadow: 0 0 30px white;
+  box-shadow: 0 0 25px white;
 }
 
 .hero{
@@ -411,7 +110,6 @@ section {
   border-radius: 15px;
   text-align: center;
   box-shadow: 0 0 20px #00f2ff;
-  transition: 0.3s;
 }
 
 .feature-box:hover {
@@ -469,7 +167,7 @@ section {
 .page-title h1 {
   color: #00f2ff;
   font-size: 3rem;
-  /* Exact image wala neon glow with purple hint */
+  /* Exact image wala neon glow */
   text-shadow: 0 0 10px #00f2ff, 0 0 25px rgba(189, 0, 255, 0.7);
 }
 
@@ -530,7 +228,7 @@ section {
   border: none;
   cursor: pointer;
   /* Button neon glow */
-  box-shadow: 0 0 20px rgba(0, 242, 255, 0.8);
+  box-shadow: 0 0 20px rgba(189, 0, 255, 0.8);
 }
 
 .join-btn:hover {
@@ -547,7 +245,13 @@ section {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
+
+min
+
+enter;
+    m
+
+in-height: 100vh;
     background: radial-gradient(circle at top, #05161a, #000); /* Image wala dark background */
 }
 
@@ -555,9 +259,9 @@ section {
     width: 380px;
     padding: 40px 30px;
     background: #0b0b0b;
-    border: 2px solid #bd00ff; /* Purple Border for Auth */
+    border: 2px solid #bd00ff;
     border-radius: 15px;
-    box-shadow: 0 0 25px rgba(189, 0, 255, 0.5); /* Soft purple neon glow */
+    box-shadow: 0 0 25px rgba(189, 0, 255, 0.5); /* Soft neon glow */
     text-align: center;
 }
 
@@ -567,8 +271,11 @@ section {
     margin-bottom: 30px;
     text-shadow: 0 0 10px #00f2ff;
 }
+/* Form
 
-/* Form in puts ko line mein lane ke liye */
+/* Form in
+
+puts ko line mein lane ke liye */
 .auth-container form {
     display: flex;
     flex-direction: column;
@@ -584,11 +291,6 @@ section {
     border-radius: 5px;
     outline: none;
     font-size: 15px;
-}
-
-.auth-container input:focus {
-    border-color: #bd00ff;
-    box-shadow: 0 0 10px #bd00ff;
 }
 
 /* Password eye icon alignment */
@@ -696,6 +398,13 @@ section {
     background: white;
 }
 
+/* ===== FULL PAGE CENTER FIX (Signup, Login, Team Register) ===== */
+
+body {
+    margin: 0;
+    min-height: 100vh;
+}
+
 /* Sirf auth type pages ko center karega */
 .auth-page {
     display: flex;
@@ -713,6 +422,14 @@ section {
     border: 2px solid #bd00ff;
     box-shadow: 0 0 35px #bd00ff;
 }
+/* CENTER ALL AUTH PAGES */
+.auth-page {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 
 /* ===== ABOUT PAGE ===== */
 .about-section {
@@ -724,7 +441,6 @@ section {
   border-radius: 18px;
   box-shadow: 0 0 35px #00f2ff;
 }
-
 .about-section h1 {
   color: #00f2ff;
   font-size: 2.8rem;
@@ -737,6 +453,18 @@ section {
   margin-top: 30px;
   margin-bottom: 10px;
 }
+
+.about-section p,
+.about-section li {
+  color: #ccc;
+  line-height: 1.8;
+}
+
+.about-section ul {
+  margin-left: 20px;
+}
+
+
 /* ===== CONTACT PAGE ===== */
 
 .contact-section {
@@ -756,6 +484,41 @@ section {
   text-shadow: 0 0 12px #bd00ff;
 }
 
+.contact-text {
+  text-align: center;
+  color: #ccc;
+  margin-bottom: 30px;
+}
+
+.contact-form label {
+  color: #00f2ff;
+  font-weight: bold;
+}
+
+.contact-success {
+    margin-top: 20px;
+    padding: 15px;
+    background: rgba(189, 0, 255, 0.1);
+    border: 1px solid #bd00ff;
+    color: #00f2ff;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 0 15px #bd00ff;
+}
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 14px;
+  margin-top: 6px;
+  margin-bottom:
+
+20px;
+  background: #000;
+  border: 1px solid #00f2ff;
+  border-radius: 8px;
+  color: white;
+}
+
 .send-btn {
   width: 100%;
   padding: 14px;
@@ -764,8 +527,45 @@ section {
   font-weight: bold;
   border-radius: 30px;
   border: none;
-  box-shadow: 0 0 25px #00f2ff;
+  box-shadow: 0 0 25px #bd00ff;
   cursor: pointer;
+}
+
+.send-btn:hover {
+  background: white;
+  color: black;
+}
+
+/* 🔥 Glow reduced version */
+.glow-text {
+  color: #7fffd4;
+  text-shadow:
+    0 0 6px rgba(127, 255, 212, 0.5),
+    0 0 12px rgba(127, 255, 212, 0.3);
+}
+
+.glow-btn {
+  box-shadow:
+    0 0 6px rgba(127, 255, 212, 0.4),
+    0 0 12px rgba(127, 255, 212, 0.25);
+}
+
+/* ===== HAMBURGER MENU ===== */
+.menu-toggle {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  width: 30px;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.menu-toggle span {
+  display: block;
+  height: 3px;
+  background: #00f2ff;
+  margin: 6px 0;
+  border-radius: 2px;
 }
 
 /* ===== SIDE MENU ===== */
@@ -782,12 +582,222 @@ section {
   z-index: 1000;
 }
 
+.side-menu a {
+  display: block;
+  padding: 15px 20px;
+  color: white;
+  text-decoration: none;
+  border-bottom: 1px solid #222;
+}
+
 .side-menu a:hover {
   background: #bd00ff;
   color: white;
 }
 
+/* ACTIVE MENU */
+.side-menu.active {
+  left: 0;
+}
+
+
+.btn-center {
+    display: flex;
+    justify-content: center;
+    margin-top: 12px;
+}
+
+.btn {
+    padding: 10px 20px;
+    border-radius: 20px;
+    border: none;
+    font-weight: bold;
+}
+
+.btn.joined {
+    background: #00f2ff;
+    color: black;
+    box-shadow: 0 0 15px #00f2ff;
+}
+
+/* ===== TEAM REGISTRATION ===== */
+
+
+.auth-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.auth-card {
+    width: 400px;
+    padding: 30px;
+    background: #0b0b0b;
+    border-radius: 15px;
+    border: 2px solid #bd00ff;
+    box-shadow: 0 0 35px rgba(189, 0, 255, 0.6);
+    text-align: center;
+}
+
+.auth-card h2 {
+    color: #00eaff;
+    margin-bottom: 20px;
+    text-shadow: 0 0 10px #00eaff;
+}
+
+.auth-card input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 14px;
+    background: #111;
+    border: 1px solid #00eaff;
+    color: white;
+    border-radius: 8px;
+    outline: none;
+}
+
+.auth-card input:focus {
+    box-shadow: 0 0 10px #bd00ff;
+    border-color: #bd00ff;
+}
+
+.auth-card button {
+    width: 100%;
+    padding: 12px;
+    background: #00eaff;
+    border: none;
+    color: black;
+    font-weight: bold;
+    border-radius: 25px;
+    cursor: pointer;
+    margin-top: 10px;
+    box-shadow: 0 0 20px #00eaff;
+}
+
+.auth-card button:hover {
+    background: white;
+}
+/* PROFILE SECTION */
+.profile-container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 40px;
+    background: rgba(15, 25, 40, 0.95);
+    border-radius: 20px;
+    box-shadow: 0 0 30px #00f2ff;
+    color: white;
+}
+
+.profile-container h1 {
+    color: #00f2ff;
+    text-shadow: 0 0 15px #00f2ff;
+    margin-bottom: 20px;
+}
+
+.profile-container h2 {
+    margin-top: 30px;
+    color: #00f2ff;
+    text-shadow: 0 0 10px #00f2ff;
+}
+
+.profile-container p {
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+
+.profile-container hr {
+    border: 1px solid #bd00ff;
+    margin: 25px 0;
+}
+
+.profile-container p strong {
+    color: #00ffff;
+}
+
+/* ===== CENTER NOTE AT BOTTOM ==== */
+
+.note-section {
+    width: 100%;
+    text-align: center;
+    margin: 40px 0 20px 0;
+}
+
+.note-section p {
+    color: #ffffff;
+    font-size: 16px;
+}
+
+.guideline-link {
+    color: #00f7ff;
+    text-decoration: underline;
+    font-weight: bold;
+    text-shadow: 0 0 8px #00f7ff;
+    transition:
+
+0.3s;
+}
+
+.guideli
+
+ne-link:hover {
+    color: #bd00ff;
+    text-shadow: 0 0 10px #bd00ff;
+}
+
+.about-section {
+  max-width: 900px;
+  margin: 60px auto;
+  padding: 40px;
+  background: #0b0b0b;
+  border: 2px solid #00f2ff;
+  border-radius: 18px;
+  box-shadow: 0 0 35px #00f2ff;
+}
+
+.about-section h1 {
+  color: #00f2ff;
+  font-size: 2.8rem;
+  text-shadow: 0 0 12px #00f2ff;
+  margin-bottom: 20px;
+}
+.about-section h2 {
+  color: #00f2ff;
+  margin-top: 30px;
+  margin-bottom: 15px;
+}
+
+.rule-table {
+  width: 100%;
+
+border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.rule-table th,
+.rule-table td {
+  border: 1px solid #00f2ff;
+  padding: 12px;
+  text-align: center;
+}
+
+.rule-table th {
+  background: linear-gradient(90deg, #00f2ff, #bd00ff);
+  color: white;
+}
+
+.danger-text {
+  color: #bd00ff;
+  font-weight: bold;
+}
+
 /* ================= TEAM ENTRIES PAGE ================= */
+
+.entries-container {
+    width: 85%;
+    margin: 60px auto;
+    text-align: center;
+}
 
 .entries-table-box {
     margin-top: 40px;
@@ -798,17 +808,226 @@ section {
     overflow: hidden;
 }
 
+.entries-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
 .entries-table th {
     background: linear-gradient(90deg, #00f2ff, #bd00ff);
     color: white;
     padding: 18px;
+    font-size: 18px;
 }
 
-/* rulebox */
+.entries-table td {
+    padding: 18px;
+    border-top: 1px solid #222;
+    color: white;
+    font-size: 17px;
+}
+
+.entries-table tr:hover {
+    background: rgba(189,0,255,0.08);
+}
+
+.team-logo {
+    width: 55px;
+    height: 55px;
+    border-radius: 10px;
+    border: 2px solid #00f2ff;
+    box-shadow: 0 0 12px #00f2ff;
+}
+
+/* rulebook.css */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap');
+
+body {
+    background-color: #0f0f0f; /* Dark background */
+    color: #ffffff;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.rulebook-section {
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 20px;
+    background: rgba(20, 20, 20, 0.8);
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(189, 0, 255, 0.2);
+}
+
+h1, h2 {
+    text-align: center;
+    text-transform: uppercase;
+    color: #00f2ff; 
+    letter-spacing: 2px;
+}
+
 .rulebox {
     background: #1a1a1a;
     border-left: 5px solid #bd00ff;
     margin-bottom: 25px;
     padding: 20px;
     border-radius: 0 10px 10px 0;
+    transition: 0.3s;
+}
+
+.rulebox:hover {
+    transform: scale(1.02);
+    box-shadow: 0 5px 15px rgba(189, 0, 255, 0.3);
+}
+
+.rulebox h3 {
+    color: #00f2ff;
+    margin-top: 0;
+    border-bottom: 1px solid #333;
+    padding-bottom: 10px;
+    font-size: 1.4rem;
+}
+
+/* Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #333;
+}
+
+th {
+    color: #888;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+}
+
+td {
+    font-weight: 600;
+    color: #eee;
+}
+
+/* forgot password */
+.reset-wrapper{
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+}
+/* Schedule Page Layout Fix */
+.tournament-grid {
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+/* Card design ko tournament page jaisa same rakhne ke liye */
+.tournament-grid .tournament-card {
+    width: 320px; /* Isse 1 line me 3 card aayenge desktop par */
+    background: #000;
+    border: 2px solid #00f2ff;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 242, 255, 0.5);
+    overflow: hidden;
+    transition: 0.3s;
+    padding-bottom: 20px; /* Button ke niche thodi jagah */
+}
+
+/* Match Schedule ke andar ke text ki styling */
+.tournament-grid .tournament-card p {
+    color: #ccc;
+    text-align: center;
+    margin: 8px 0;
+    font-size: 0.95rem;
+}
+
+/* Button style fix */
+.joined-btn {
+    display: block;
+    margin: 15px auto;
+    padding: 10px 25px;
+    background: linear-gradient(45deg, #00f2ff, #bd00ff);
+    color: white;
+    font-weight: bold;
+    border-radius: 25px;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 0 20px rgba(189, 0, 255, 0.8);
+}
+
+.joined-btn:hover {
+    background: white;
+    color: black;
+    box-shadow: 0 0 25px white;
+}
+
+
+/* ================= MATCH RESULTS ================= */
+
+.results-container{
+max-width:1000px;
+margin:60px auto;
+padding:40px;
+background:#0b0b0b;
+border:2px solid #00f2ff;
+border-radius:18px;
+box-shadow:0 0 35px #bd00ff;
+}
+
+.results-title{
+text-align:center;
+color:#00f2ff;
+font-size:2.5rem;
+text-shadow:0 0 12px #00f2ff;
+margin-bottom:30px;
+}
+
+.result-section{
+margin-bottom:40px;
+}
+
+.result-section h2{
+color:#00f2ff;
+margin-bottom:15px;
+}
+
+.team-list{
+list-style:disc;
+padding-left:20px;
+color:#ddd;
+}
+
+.team-list li{
+margin-bottom:6px;
+}
+
+/* table */
+
+.results-table{
+width:100%;
+border-collapse:collapse;
+margin-top:20px;
+}
+
+.results-table th{
+background: linear-gradient(90deg, #00f2ff, #bd00ff);
+color:white;
+padding:12px;
+}
+
+.results-table td{
+padding:12px;
+border-top:1px solid #333;
+color:white;
+}
+
+.results-table tr:hover{
+background:rgba(189,0,255,0.1);
 }
