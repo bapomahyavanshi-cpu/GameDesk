@@ -1,26 +1,48 @@
-{% extends 'base.html' %}
+{% extends "base.html" %}
 {% load static %}
 
 {% block content %}
 
 <div class="profile-container">
 
-    <h1>{{ user.username }}'s Profile</h1>
+    <!-- Banner -->
+    <div class="profile-banner"></div>
 
-    <p><strong>Email:</strong> {{ user.email }}</p>
-    <p><strong>Phone:</strong> {{ profile.phone }}</p>
-    <p><strong>In-Game Name:</strong> {{ profile.in_game_name }}</p>
-    <p><strong>Joined:</strong> {{ user.date_joined }}</p>
+    <!-- Header -->
+    <div class="profile-header">
 
-    <hr>
+        <div class="profile-pic">
+            <img src="{% static 'images/default-user.png' %}">
+            <span class="status-dot"></span>
+        </div>
 
-    <h2>Registered Tournaments</h2>
+        <div class="profile-info">
+            <h2>{{ user.username }}</h2>
+            <p class="username">@{{ user.username }}</p>
+        </div>
 
-    {% for reg in registrations %}
-        <p>✔ {{ reg.tournament.title }} ({{ reg.status }})</p>
-    {% empty %}
-        <p>No tournaments registered yet.</p>
-    {% endfor %}
+        <button class="edit-btn">Edit Profile</button>
+
+    </div>
+
+    <!-- Cards -->
+    <div class="profile-cards">
+
+        <div class="card">
+            <h3>Profile Info</h3>
+            <p>Email: {{ user.email }}</p>
+            <p>In-Game Name: {{ user.profile.ingame_name }}</p>
+            <p>Joined: {{ user.date_joined }}</p>
+        </div>
+
+        <div class="card">
+            <h3>Stats</h3>
+            <p>Tournaments Played: 0</p>
+            <p>Wins: 0</p>
+            <p>Top 5: 0</p>
+        </div>
+
+    </div>
 
 </div>
 
