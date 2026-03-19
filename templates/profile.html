@@ -2,48 +2,59 @@
 {% load static %}
 
 {% block content %}
-
-<div class="profile-container">
-
-    <!-- Banner -->
-    <div class="profile-banner"></div>
-
-    <!-- Header -->
-    <div class="profile-header">
-
-        <div class="profile-pic">
-            <img src="{% static 'images/default-user.png' %}">
-            <span class="status-dot"></span>
+<div class="profile-page-wrapper">
+    <div class="profile-container">
+        <div class="profile-banner">
+            <button class="edit-btn-top"><i class="fas fa-pen"></i> Edit Profile</button>
         </div>
 
-        <div class="profile-info">
-            <h2>{{ user.username }}</h2>
-            <p class="username">@{{ user.username }}</p>
+        <div class="profile-header-main">
+            <div class="profile-pic-wrapper">
+                <img src="{% static 'images/default-user.png' %}" class="profile-main-img">
+                <div class="status-dot-large"></div>
+            </div>
+            
+            <div class="profile-name-section">
+                <h2 class="display-name">{{ user.username }} <span class="badge-pro">PRO</span></h2>
+                <p class="user-handle">@{{ user.username }}</p>
+            </div>
         </div>
 
-        <button class="edit-btn">Edit Profile</button>
+        <div class="profile-grid">
+            <div class="profile-card profile-about">
+                <h3>ABOUT ME</h3>
+                <div class="info-item">
+                    <label>EMAIL</label>
+                    <span>{{ user.email }}</span>
+                </div>
+                <div class="info-item">
+                    <label>IN-GAME NAME</label>
+                    <span>{{ user.profile.ingame_name|default:"Not Set" }}</span>
+                </div>
+                <div class="info-item">
+                    <label>MEMBER SINCE</label>
+                    <span>{{ user.date_joined|date:"M d, Y" }}</span>
+                </div>
+            </div>
 
+            <div class="profile-card profile-stats">
+                <h3>GAME STATS</h3>
+                <div class="stats-row">
+                    <div class="stat-box">
+                        <span class="stat-value">0</span>
+                        <span class="stat-label">Played</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="stat-value">0</span>
+                        <span class="stat-label">Wins</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="stat-value">0</span>
+                        <span class="stat-label">Top 5</span>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-
-    <!-- Cards -->
-    <div class="profile-cards">
-
-        <div class="card">
-            <h3>Profile Info</h3>
-            <p>Email: {{ user.email }}</p>
-            <p>In-Game Name: {{ user.profile.ingame_name }}</p>
-            <p>Joined: {{ user.date_joined }}</p>
-        </div>
-
-        <div class="card">
-            <h3>Stats</h3>
-            <p>Tournaments Played: 0</p>
-            <p>Wins: 0</p>
-            <p>Top 5: 0</p>
-        </div>
-
-    </div>
-
 </div>
-
 {% endblock %}
