@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="edit-profile-wrapper">
+
+    <div class="edit-profile-card">
+
+        <h2>EDIT PROFILE</h2>
+
+       <p style="text-align:center;">Currently: {{ user.profile.profile_pic }}</p>
+       
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.as_p }}
+
+            <button type="submit" class="edit-btn-neon">Save</button>
+        </form>
+
+    </div>
+
+</div>
+
+{% endblock %}

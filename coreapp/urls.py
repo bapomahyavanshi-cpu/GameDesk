@@ -40,6 +40,9 @@ urlpatterns = [
     path('logout/', views.logout_view, name='logout'),
 
     path('forgot_password/', views.forgot_password, name='forgot_password'),
+
+    path('edit_profile/', views.edit_profile, name='edit_profile'),
+
 ]
 
 

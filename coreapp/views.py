@@ -269,3 +269,20 @@ def forgot_password(request):
                 return render(request,"forgot_password.html",{"error":"User not found"})
 
     return render(request,"forgot_password.html")
+
+from .models import Profile
+from .forms import ProfileForm
+from django.shortcuts import render, redirect
+
+def edit_profile(request):
+    profile, created = Profile.objects.get_or_create(user=request.user)
+
+    if request.method == 'POST':
+        form = ProfileForm(request.POST, request.FILES, instance=profile)
+        if form.is_valid():
+            form.save()
+            return redirect('profile')
+    else:
+        form = ProfileForm(instance=profile)
+
+    return render(request, 'edit_profile.html', {'form': form})

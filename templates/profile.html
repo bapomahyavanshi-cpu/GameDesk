@@ -6,7 +6,7 @@
     <div class="wa-profile-card">
         <div class="wa-header">
             <div class="wa-avatar-section">
-                <img src="{% static 'images/default-user.png' %}" alt="Avatar">
+                <img src="{{ user.profile.profile_pic.url }}" alt="Avatar">
                 <button class="cam-icon"><i class="fas fa-camera"></i></button>
             </div>
             <div class="wa-user-main">
@@ -54,8 +54,7 @@
         </div>
 
         <div class="wa-footer-actions">
-            <button class="edit-btn-neon">EDIT PROFILE</button>
-            <button class="logout-btn-neon">LOGOUT</button>
+            <a href="{% url 'edit_profile' %}" class="edit-btn-neon">EDIT PROFILE</a> 
         </div>
     </div>
 </div>

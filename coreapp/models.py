@@ -136,3 +136,27 @@ class ContactMessage(models.Model):
 
     def str(self):
         return self.name
+
+from django.contrib.auth.models import User
+from django.db import models
+
+class Profile(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    ingame_name = models.CharField(max_length=100, blank=True)
+    profile_pic = models.ImageField(upload_to='profile_pics/', default='default-user.png')
+
+    def _str_(self):
+        return self.user.username
+
+from django.db.models.signals import post_save
+from django.dispatch import receiver
+from django.contrib.auth.models import User
+
+@receiver(post_save, sender=User)
+def create_user_profile(sender, instance, created, **kwargs):
+    if created:
+        Profile.objects.create(user=instance)
+
+@receiver(post_save, sender=User)
+def save_user_profile(sender, instance, **kwargs):
+    instance.profile.save()
