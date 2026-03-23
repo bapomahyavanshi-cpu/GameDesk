@@ -273,7 +273,9 @@ def forgot_password(request):
 from .models import Profile
 from .forms import ProfileForm
 from django.shortcuts import render, redirect
+from django.contrib.auth.decorators import login_required
 
+@login_required
 def edit_profile(request):
     profile, created = Profile.objects.get_or_create(user=request.user)
 
