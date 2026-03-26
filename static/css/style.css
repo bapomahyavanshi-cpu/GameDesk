@@ -1,4 +1,4 @@
-/* ===== GLOBAL ===== */
+/* ============== GLOBAL ================*/
 * {
   margin: 0;
   padding: 0;
@@ -7,17 +7,17 @@
 }
 
 body {
-  /* Background ko deep black kiya hai taaki neon color 1st image jaisa dikhe */
+  /* Background */
   background: radial-gradient(circle at top, #05161a, #000);
   color: white;
   min-height: 100vh;
 }
 
-/* ===== NAVBAR - Padding Adjust Kiya Hai ===== */
+/* NAVBAR  */
 .navbar {
   background: #0b0b0b;
   border-bottom: 2px solid #bd00ff;
-  padding: 15px 30px 15px 80px; /* LEFT PADDING 80px taki hamburger ke liye jagah rahe */
+  padding: 15px 30px 15px 80px; /* LEFT PADDING  */
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -49,7 +49,7 @@ body {
 .hero h1 {
   font-size: 3.5rem;
   color: #00f2ff;
-  /* Glow intensity badha di hai image ke hisaab se */
+  /* Glow intensity */
   text-shadow: 0 0 10px #00f2ff, 0 0 25px #bd00ff, 0 0 40px rgba(189, 0, 255, 0.6);
 }
 
@@ -99,7 +99,7 @@ text-align:center;
 padding-top:500px;
 }
 
-/* ===== FEATURES ===== */
+/* ============ FEATURES ============ */
 section {
   padding: 60px 20px;
 }
@@ -129,7 +129,7 @@ section {
   color: #ccc;
 }
 
-/* ===== FLOATING RULEBOOK & SOCIAL ===== */
+/* ============= FLOATING RULEBOOK & SOCIAL ============== */
 .bottom-right {
   position: fixed;
   right: 20px;
@@ -157,7 +157,7 @@ section {
   text-shadow: 0 0 10px #bd00ff;
 }
   
-/* ===== TOURNAMENTS ===== */
+/* ============== TOURNAMENTS ============ */
 
 .page-title {
   text-align: center;
@@ -167,7 +167,7 @@ section {
 .page-title h1 {
   color: #00f2ff;
   font-size: 3rem;
-  /* Exact image wala neon glow */
+  /* Exact image neon glow */
   text-shadow: 0 0 10px #00f2ff, 0 0 25px rgba(189, 0, 255, 0.7);
 }
 
@@ -185,7 +185,7 @@ section {
 
 .tournament-card {
   width: 320px;
-  background: #000; /* Card ke andar pure black taaki glow dikhe */
+  background: #000; /* Card center */
   border: 2px solid #00f2ff;
   border-radius: 15px;
   /* Outer glow effect */
@@ -238,7 +238,7 @@ section {
 }
 
 
-/* ===== AUTH PAGES ===== */
+/* ================ AUTH PAGES ================== */
 
 
 .auth-wrapper {
@@ -246,7 +246,7 @@ section {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: radial-gradient(circle at top, #05161a, #000); /* Image wala dark background */
+    background: radial-gradient(circle at top, #05161a, #000); /* Image dark background */
 }
 
 .auth-container {
@@ -267,9 +267,7 @@ section {
 }
 /* Form
 
-/* Form in
-
-puts ko line mein lane ke liye */
+/* Form in */
 .auth-container form {
     display: flex;
     flex-direction: column;
@@ -335,7 +333,7 @@ puts ko line mein lane ke liye */
     font-weight: bold;
 }
 
-/* ===== AUTH FULL CENTER FIX ===== */
+/* ============ AUTH FULL CENTER FIX =============== */
 
 .auth-page {
     min-height: 100vh;
@@ -392,14 +390,14 @@ puts ko line mein lane ke liye */
     background: white;
 }
 
-/* ===== FULL PAGE CENTER FIX (Signup, Login, Team Register) ===== */
+/* =============== FULL PAGE CENTER FIX (Signup, Login, Team Register) ================= */
 
 body {
     margin: 0;
     min-height: 100vh;
 }
 
-/* Sirf auth type pages ko center karega */
+/* auth pages center */
 .auth-page {
     display: flex;
     justify-content: center;
@@ -425,7 +423,7 @@ body {
 }
 
 
-/* ===== ABOUT PAGE ===== */
+/* ================= ABOUT PAGE ================== */
 .about-section {
   max-width: 900px;
   margin: 60px auto;
@@ -459,7 +457,7 @@ body {
 }
 
 
-/* ===== CONTACT PAGE ===== */
+/* =============== CONTACT PAGE =============== */
 
 .contact-section {
   max-width: 600px;
@@ -544,7 +542,7 @@ body {
     0 0 12px rgba(127, 255, 212, 0.25);
 }
 
-/* ===== HAMBURGER MENU ===== */
+/* ============== HAMBURGER MENU =============== */
 .menu-toggle {
   position: fixed;
   top: 20px;
@@ -562,7 +560,7 @@ body {
   border-radius: 2px;
 }
 
-/* ===== SIDE MENU ===== */
+/* ================= SIDE MENU ================== */
 .side-menu {
   position: fixed;
   top: 0;
@@ -614,7 +612,7 @@ body {
     box-shadow: 0 0 15px #00f2ff;
 }
 
-/* ===== TEAM REGISTRATION ===== */
+/* =============== TEAM REGISTRATION ================ */
 
 
 .auth-container {
@@ -673,7 +671,7 @@ body {
     background: white;
 }
 
-/* ===== CENTER NOTE AT BOTTOM ==== */
+/* ================ CENTER NOTE AT BOTTOM =============== */
 
 .note-section {
     width: 100%;
@@ -886,19 +884,19 @@ height:100vh;
     padding: 20px;
 }
 
-/* Card design ko tournament page jaisa same rakhne ke liye */
+/* Card design */
 .tournament-grid .tournament-card {
-    width: 320px; /* Isse 1 line me 3 card aayenge desktop par */
+    width: 320px; 
     background: #000;
     border: 2px solid #00f2ff;
     border-radius: 15px;
     box-shadow: 0 0 20px rgba(0, 242, 255, 0.5);
     overflow: hidden;
     transition: 0.3s;
-    padding-bottom: 20px; /* Button ke niche thodi jagah */
+    padding-bottom: 20px; 
 }
 
-/* Match Schedule ke andar ke text ki styling */
+/* Match Schedule */
 .tournament-grid .tournament-card p {
     color: #ccc;
     text-align: center;
@@ -990,7 +988,7 @@ color:white;
 background:rgba(189,0,255,0.1);
 }
 
-/* ===== WHATSAPP NEON PROFILE ===== */
+/* =============== WHATSAPP NEON PROFILE =============== */
 .wa-profile-wrapper {
     display: flex;
     justify-content: center;
@@ -1142,7 +1140,7 @@ background:rgba(189,0,255,0.1);
     color: white;
 }
 
-/* ===== FINAL CENTER FIX ===== */
+/* =============== FINAL CENTER FIX =============== */
 
 .edit-profile-wrapper {
     min-height: calc(100vh - 120px);
@@ -1161,7 +1159,7 @@ background:rgba(189,0,255,0.1);
     text-align: center;
 }
 
-/* form ko center karne ke liye */
+/* form  center */
 .edit-profile-card form {
     display: flex;
     flex-direction: column;
