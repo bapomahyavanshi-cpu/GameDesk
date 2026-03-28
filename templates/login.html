@@ -1,38 +1,45 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Login | Game Desk</title>
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-</head>
+{% extends "base.html" %}
+{% block content %}
 
-<body>
+<div class="login-wrapper">
 
-<div class="auth-page">
-    <div class="auth-card">
-        <h2>LOGIN</h2>
+    <div class="login-card-neon">
 
-        <form method="post">
+        <h2>Sign in to <span>GameDesk</span></h2>
+
+        <!-- Google -->
+        <button class="google-btn">
+            <i class="fab fa-google"></i> Login via Google
+        </button>
+
+        <!-- Social -->
+        <div class="social-icons">
+            <i class="fab fa-twitch"></i>
+            <i class="fab fa-facebook"></i>
+            <i class="fab fa-x-twitter"></i>
+            <i class="fab fa-discord"></i>
+        </div>
+
+        <div class="divider">OR</div>
+
+        <form method="POST">
             {% csrf_token %}
 
-            <input type="email" name="email" placeholder="Email Address" required>
-            <input type="password" name="password" placeholder="Password" required>
+            <input type="email" placeholder="Email" required>
+            <input type="password" placeholder="Password" required>
 
-            <button type="submit">Login</button>
+            <div class="login-options">
+                <label><input type="checkbox"> Remember me</label>
+                <a href="#">Forgot password?</a>
+            </div>
+
+            <button class="login-btn">Sign in</button>
         </form>
 
-        <p>
-            Don't have an account?
-            <a href="{% url 'signup' %}">Sign Up</a>
-        </p>
-        <p>
-             <a href="{% url 'forgot_password' %}" style="color:#00f2ff;">
-            Forgot Password?
-       </a>
-       </p> 
+        <p>Don't have an account? <a href="{% url 'signup' %}">Sign up</a></p>
+
     </div>
+
 </div>
 
-</body>
-</html>
+{% endblock %}
