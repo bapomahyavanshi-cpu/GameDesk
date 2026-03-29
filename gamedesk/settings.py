@@ -39,7 +39,7 @@ INSTALLED_APPS = [
 SITE_ID = 1
 
 # Redirect after successful login
-LOGIN_REDIRECT_URL = '/dashboard/'
+LOGIN_REDIRECT_URL = '/tournament/'
 
 # Middleware
 MIDDLEWARE = [
@@ -152,3 +152,5 @@ ACCOUNT_EMAIL_VERIFICATION = 'none'
 
 SOCIALACCOUNT_ADAPTER = 'allauth.socialaccount.adapter.DefaultSocialAccountAdapter'
 SOCIALACCOUNT_AUTO_SIGNUP = True
+
+SOCIALACCOUNT_LOGIN_ON_GET = True
