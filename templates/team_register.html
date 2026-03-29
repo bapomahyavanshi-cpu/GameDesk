@@ -1,42 +1,65 @@
-{% load static %}
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Team Registration</title>
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-</head>
-<body>
+{% extends "base.html" %}
+{% block content %}
 
-<div class="auth-page">
-    <div class="auth-card">
-        <h2>Team Registration</h2>
+<div class="team-wrapper">
+
+    <div class="team-card">
+
+        <h2> TEAM REGISTRATION</h2>
 
         <form method="POST" enctype="multipart/form-data">
-    {% csrf_token %}
+            {% csrf_token %}
 
-    <input type="text" name="team_name" placeholder="Team Name" required>
+            <div class="input-group">
+                <i class="fas fa-users"></i>
+                <input type="text" name="team_name" placeholder="Team Name" required>
+            </div>
 
-    <input type="email" name="email" placeholder="Email Address" required>
-    <input type="text" name="phone" placeholder="Mobile Number" required>
+            <div class="input-group">
+                <i class="fas fa-envelope"></i>
+                <input type="email" name="email" placeholder="Email Address" required>
+            </div>
 
-    <hr>
+            <div class="input-group">
+                <i class="fas fa-phone"></i>
+                <input type="text" name="mobile" placeholder="Mobile Number" required>
+            </div>
 
-    <input type="text" name="player1_ign" placeholder="Player 1 IGN" required>
-    
-    <input type="text" name="player2_ign" placeholder="Player 2 IGN" required>
-    
-    <input type="text" name="player3_ign" placeholder="Player 3 IGN" required>
-    
-    <input type="text" name="player4_ign" placeholder="Player 4 IGN" required>
-    
-    <input type="text" name="player5_ign" placeholder="Player 5 IGN (Optional)">
-    
-    <label>Team Logo</label>
-    <input type="file" name="team_logo">
+            <hr>
 
-    <button type="submit">Register Team</button>
-</form>
+            <h4>Players</h4>
 
-      
-</body>
-</html>
+            <div class="input-group">
+                <input type="text" placeholder="Player 1 IGN" required>
+            </div>
+
+            <div class="input-group">
+                <input type="text" placeholder="Player 2 IGN" required>
+            </div>
+
+            <div class="input-group">
+                <input type="text" placeholder="Player 3 IGN" required>
+            </div>
+
+            <div class="input-group">
+                <input type="text" placeholder="Player 4 IGN" required>
+            </div>
+
+            <div class="input-group">
+                <input type="text" placeholder="Player 5 IGN (Optional)">
+            </div>
+
+            <div class="file-upload">
+                <label>Upload Team Logo</label>
+                <input type="file" name="logo">
+            </div>
+
+            <button class="register-btn">🚀 Register Team</button>
+
+        </form>
+
+    </div>
+
+</div>
+
+{% endblock %}

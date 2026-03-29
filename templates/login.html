@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% block content %}
+{% load socialaccount %} {% block content %}
 
 <div class="login-wrapper">
 
@@ -7,34 +7,27 @@
 
         <h2>Sign in to <span>GameDesk</span></h2>
 
-        <!-- Google -->
-        <button class="google-btn">
+        <a href="{% provider_login_url 'google' %}" class="google-btn" style="text-decoration: none; display: block; text-align: center;">
             <i class="fab fa-google"></i> Login via Google
-        </button>
-
-        <!-- Social -->
-        <div class="social-icons">
-            <i class="fab fa-twitch"></i>
-            <i class="fab fa-facebook"></i>
-            <i class="fab fa-x-twitter"></i>
-            <i class="fab fa-discord"></i>
-        </div>
+        </a>
 
         <div class="divider">OR</div>
+        
 
         <form method="POST">
-            {% csrf_token %}
+    {% csrf_token %}
 
-            <input type="email" placeholder="Email" required>
-            <input type="password" placeholder="Password" required>
+    <input type="text" name="username" placeholder="Email or Username" required>
+    
+    <input type="password" name="password" placeholder="Password" required>
 
-            <div class="login-options">
-                <label><input type="checkbox"> Remember me</label>
-                <a href="#">Forgot password?</a>
-            </div>
+    <div class="login-options">
+        <label><input type="checkbox"> Remember me</label>
+        <a href="#">Forgot password?</a>
+    </div>
 
-            <button class="login-btn">Sign in</button>
-        </form>
+    <button type="submit" class="login-btn">Sign in</button>
+</form>
 
         <p>Don't have an account? <a href="{% url 'signup' %}">Sign up</a></p>
 

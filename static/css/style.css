@@ -1376,3 +1376,143 @@ background:rgba(189,0,255,0.1);
 .login-card-neon a {
     color: #00f2ff;
 }
+
+/* =============== SIGNUP NEW FIX =============== */
+
+.signup-wrapper {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #0b0f19;
+}
+
+.signup-card {
+    width: 500px;
+    padding: 40px;
+    background: rgba(10, 10, 10, 0.95);
+    border-radius: 20px;
+    box-shadow: 0 0 40px rgba(0,255,255,0.3);
+    text-align: center;
+    color: white;
+}
+
+.signup-card h2 {
+    margin-bottom: 25px;
+    color: #00f2ff;
+}
+
+/* input row */
+.input-group {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+/* input fields */
+.signup-card input {
+    flex: 1;
+    padding: 12px;
+    border-radius: 10px;
+    border: none;
+    background: #1f2937;
+    color: white;
+}
+
+/* button */
+.signup-btn {
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient(45deg, #00f2ff, #bd00ff);
+    border: none;
+    border-radius: 10px;
+    font-weight: bold;
+    color: white;
+    margin-top: 15px;
+}
+
+.signup-card a {
+    color: #00f2ff;
+}
+/* =============== UPDATED REGISTRATION PAGE =============== */
+
+.team-wrapper {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: radial-gradient(circle at top, #0b0f19, #020617);
+}
+
+.team-card {
+    width: 420px;
+    padding: 30px;
+    border-radius: 20px;
+    background: rgba(17, 24, 39, 0.8);
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(0,255,255,0.3);
+    box-shadow: 0 0 30px rgba(0,255,255,0.3);
+    color: white;
+}
+
+.team-card h2 {
+    text-align: center;
+    color: #00f2ff;
+    text-shadow: 0 0 10px #00f2ff;
+    margin-bottom: 20px;
+}
+
+.input-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+    background: rgba(0,0,0,0.4);
+    border-radius: 10px;
+    border: 1px solid rgba(0,255,255,0.3);
+    padding: 8px;
+}
+
+.input-group i {
+    margin-right: 10px;
+    color: #00f2ff;
+}
+
+.input-group input {
+    width: 100%;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: white;
+}
+
+.file-upload {
+    margin-top: 15px;
+}
+
+.file-upload input {
+    margin-top: 5px;
+    color: white;
+}
+
+.register-btn {
+    width: 100%;
+    padding: 14px;
+    margin-top: 20px;
+    border: none;
+    border-radius: 12px;
+    font-weight: bold;
+    background: linear-gradient(45deg, #00f2ff, #bd00ff);
+    color: white;
+    box-shadow: 0 0 20px rgba(189, 0, 255, 0.7);
+    transition: 0.3s;
+}
+
+.register-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px #00f2ff;
+}
+
+hr {
+    border: 1px solid rgba(255,255,255,0.1);
+    margin: 15px 0;
+}

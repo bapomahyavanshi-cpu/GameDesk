@@ -10,7 +10,7 @@ urlpatterns = [
     path('about/', views.about, name='about'),
     path('contact/', views.contact, name='contact'),
 
-    path('signup/', views.signup, name='signup'),
+    path('signup/', views.signup_view, name='signup'),
     path('login/', views.login_view, name='login'),
 
     path('tournament/', views.tournament, name='tournament'),
@@ -33,8 +33,6 @@ urlpatterns = [
     
     path('all_team_entries/', views.all_team_entries, name='all_team_entries'),
     
-    path('contact/', views.contact, name='contact'),
-
     path('match-results/', views.match_results, name='match_results'),
 
     path('logout/', views.logout_view, name='logout'),

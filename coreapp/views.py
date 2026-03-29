@@ -288,3 +288,52 @@ def edit_profile(request):
         form = ProfileForm(instance=profile)
 
     return render(request, 'edit_profile.html', {'form': form})
+
+from django.shortcuts import render, redirect
+from django.contrib.auth import authenticate, login
+from django.contrib.auth.models import User
+
+
+# LOGIN VIEW
+def login_view(request):
+    if request.method == "POST":
+        username = request.POST.get("username")
+        password = request.POST.get("password")
+
+        user = authenticate(request, username=username, password=password)
+
+        if user is not None:
+            login(request, user)
+            return redirect("dashboard")
+        else:
+            return render(request, "login.html", {"error": "Invalid username or password"})
+
+    return render(request, "login.html")
+
+
+# SIGNUP VIEW
+def signup_view(request):
+    if request.method == "POST":
+        username = request.POST.get("username")
+        email = request.POST.get("email")
+        password = request.POST.get("password")
+
+        if User.objects.filter(username=username).exists():
+            return render(request, "signup.html", {"error": "Username already exists"})
+
+        if User.objects.filter(email=email).exists():
+            return render(request, "signup.html", {"error": "Email already exists"})
+
+        # Create user
+        user = User.objects.create_user(
+            username=username,
+            email=email,
+            password=password
+        )
+
+        # FIX: Explicitly specify the backend for the auto-login
+        login(request, user, backend='django.contrib.auth.backends.ModelBackend')
+
+        return redirect("dashboard")
+
+    return render(request, "signup.html")
