@@ -1,36 +1,39 @@
 {% extends "base.html" %}
+{% load static %}
+
 {% block content %}
+<style>
+    .auth-page-bg {
+        background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                    url("{% static 'images/bgmi_pic2.jpg' %}") no-repeat center center fixed !important;
+        background-size: cover !important;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 0;
+    }
+</style>
 
-<div class="signup-wrapper">
-
-    <div class="signup-card">
-
-        <h2>Create Account on GameDesk</h2>
+<div class="auth-page-bg">
+    <div class="login-card-neon">
+        <h2 class="text-center mb-4">Create Account on <span style="color: cyan;">GameDesk</span></h2>
 
         <form method="POST">
-    {% csrf_token %}
+            {% csrf_token %}
+            <input type="text" name="username" placeholder="Username" required>
+            <input type="email" name="email" placeholder="Email" required>
+            <input type="password" name="password" placeholder="Password" required>
+            <button type="submit" class="login-btn">Sign Up</button>
+        </form>
 
-    <div class="input-group">
-        <input type="text" name="username" placeholder="Username" required>
-    </div>
-
-    <div class="input-group">
-        <input type="email" name="email" placeholder="Email" required>
-    </div>
-
-    <div class="input-group">
-        <input type="password" name="password" placeholder="Password" required>
-    </div>
-
-    <button type="submit" class="signup-btn">Sign Up</button>
-</form>
-
-        <p>Already have an account? 
-            <a href="{% url 'login' %}">Sign in</a>
+        <p class="text-center mt-4">Already have an account? 
+            <a href="{% url 'login' %}" style="color: cyan; text-decoration: none;">Sign in</a>
         </p>
-
     </div>
-
 </div>
-
 {% endblock %}

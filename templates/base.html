@@ -39,10 +39,6 @@
 </head><body><nav class="navbar navbar-expand-lg navbar-dark bg-dark px-4">
     <a class="navbar-brand" href="{% url 'home' %}">GAME DESK</a><div class="ms-auto d-flex align-items-center">
     <a href="{% url 'tournament' %}" class="text-white me-3">Tournaments</a>
-    <a href="{% url 'my_tournaments' %}" class="text-white me-3">My Tournaments</a>
-    <a href="{% url 'match_schedule' %}" class="text-white me-3">Match Schedule</a>
-    <a href="{% url 'all_team_entries' %}" class="text-white me-3">Team Entries</a>
-
     {% if user.is_authenticated %}
         <a href="{% url 'dashboard' %}" class="text-white me-3">Dashboard</a>
 
@@ -80,8 +76,12 @@
         <i class="fab fa-whatsapp fa-lg"></i>
     </a>
 
-    <a href="https://youtube.com/@gamedesk-e6s" target="_blank" class="text-info">
+    <a href="https://youtube.com/@gamedesk-e6s" target="_ blank" class="text-info me-3">
         <i class="fab fa-youtube fa-lg"></i>
+    </a>
+
+     <a href="https://discord.gg/tYbgameqe" target="_blank" class="text-info">
+            <i class="fab fa-discord fa-lg"></i>
     </a>
 </div>
 
